@@ -1,0 +1,127 @@
+
+@font-face { font-family: TF2; src: url('tf2build.ttf'); }
+html{
+    background-image: url('Media/bg.jpg');
+    background-repeat: repeat-y;
+    background-size: 120%;
+    background-position: center;
+    overflow-y: scroll;
+}
+
+.UpperBG{
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 200px;
+    transform: translateX(-100%);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
+    height: auto;
+    z-index: -1;
+}
+
+.logo{
+position: absolute;
+height: 220px;
+top: 40%;
+right: 50%;
+left: 50%;
+transform: translate(-40%, -50%) rotate(-5deg);
+z-index: 3;
+filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
+pointer-events: none;
+}
+
+.char{
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  z-index: 1
+}
+.merc{
+height: 160px;
+transition: 0.3s;
+filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
+}
+.merc:hover{filter: brightness(150%);}
+
+.REDSign{
+position: absolute;
+height: 150px;
+top: 0;
+filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
+transform: translate(180px, 240px) rotate(-245deg);
+z-index: 2;
+pointer-events: none;
+}
+
+.funny{
+    position: absolute;
+    top: 0;
+    height: 200px;
+    transform: translate(120%, 140%) rotate(-190deg);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tab{
+    display: grid;
+    margin: 18% 20% 0% 20%;
+    font-family: TF2;
+    text-align: center;
+    color:  #363636;
+    font-size:x-large;
+    grid-template-columns: repeat(2, 1fr);
+}
+.selector:hover{color: white;}
+
+.main{
+    padding: 1px 0px 0px 0px;
+    margin: 15% 17% 0px 17%;
+    background-color: #dabdab ;
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+}
+
+h1{
+    color: #b35215;
+}
+
+.info{
+    font-family: arial,helvetica,sans-serif;
+    line-height: 30px;
+    display: grid;
+    text-align: left;
+    margin: 0px 20px 0px 20px;
+    grid-template-columns: 2fr 1fr;
+    color:  #363636;
+}
+.info-container{
+    background-image: linear-gradient(#c4b8b1 0%,#f5e7de 3%,#f5e7de 97%,#c4b8b1 100%);
+    border: 2px outset  #c1a18a  ;
+    border-radius: 20px 20px 0px 0px;
+}
+.hl{
+font-style: italic;
+}
+
+.team{
+    height: 420px;
+    border: 2px solid  transparent  ;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.footer{
+    padding: 1px 0 1px 0;
+    display: grid;
+    margin: 0 17% 0 17%;
+    grid-template-columns: 1fr 10fr;
+    text-align: left;
+    background-image:linear-gradient(#6b645b 0%, #5a5149 5%, #443f39 95%);
+    color: #b1aca0;
+    font-family: arial,helvetica,sans-serif;
+    font-size: small;
+}
