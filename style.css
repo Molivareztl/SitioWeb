@@ -1,5 +1,5 @@
 
-@font-face { font-family: TF2; src: url('tf2build.ttf'); }
+@font-face { font-family: TF2; src: url('Fonts/tf2build.ttf'); }
 html{
     background-image: url('Media/bg.jpg');
     background-repeat: repeat-y;
