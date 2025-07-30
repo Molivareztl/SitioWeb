@@ -7,30 +7,24 @@ html{
     background-position: center;
     overflow-y: scroll;
 }
-
-.UpperBG{
+.upperBG{
     position: absolute;
     top: 0;
     right: 50%;
     width: 200px;
     transform: translateX(-100%);
-    filter: drop-shadow(5px 5px 15px rgba(65, 29, 19, 0.75));
     height: auto;
     z-index: -1;
 }
-
 .logo{
 position: absolute;
-height: 360px;
 top: 45%;
 right: 50%;
 left: 50%;
-transform: translate(-50%, -50%) rotate(1deg);
+transform: translate(-50%, -50%) rotate(-1deg);
 z-index: 3;
-filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
 pointer-events: none;
 }
-
 .char{
   display: grid;
   grid-template-columns: repeat(9, 1fr);
@@ -45,18 +39,11 @@ height: 160px;
 transition: 0.3s;
 filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
 }
-.merc:hover{filter: contrast(150%); filter: brightness(150%); filter: grayscale(80%);  }
+.merc:hover{filter: contrast(150%); filter: brightness(150%); filter: grayscale(80%);}
+.shadow{filter: drop-shadow(3px 2px 15px rgba(0, 0, 0, 0.75));}
+.selector:hover{filter: brightness(120%); color: white;}
 
-.REDSign{
-position: absolute;
-height: 150px;
-top: 0;
-filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
-transform: translate(160px, 240px) rotate(-245deg);
-z-index: 2;
-pointer-events: none;
-}
-.tab{
+.options{
     display: grid;
     margin: 25% 20% 0% 20%;
     grid-template-columns: repeat(2, 1fr);
@@ -68,12 +55,10 @@ button{
     background-color: transparent;
     font-size:x-large;
 }
-.selector:hover{filter: brightness(120%); color: white;}
-.main{
+main{
     padding: 1px 0px 0px 0px;
     margin: 15% 17% 0px 17%;
     background-color: #dabdab ;
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
 }
 .info{
     font-family: arial,helvetica,sans-serif;
@@ -95,7 +80,6 @@ h1{
     font-weight: normal;
 }
 .team{
-    height: 420px;
     border: 2px solid  transparent  ;
     border-radius: 20px;
     margin: 10px 120px 10px 120px;
@@ -103,32 +87,26 @@ h1{
 .BLU{
     position:absolute;
     left: 5%;
-    height: 160px;
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
     transform: rotate(15deg);
     z-index: 5;
 }
 .RED{
     position:absolute;
     right: 5%;
-    height: 160px;
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
     transform: rotate(-15deg);
     z-index: 5;
 }
-.OrangeBox{
+.orangeBox{
     position:absolute;
     right: 15%;
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
     transform: translate(0px, -300px) rotate(-15deg);
 }
-.Steam{
+.steam{
     position:absolute;
     left: 14%;
-    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
     transform: translate(0px, -100px) rotate(15deg);
 }
-.footer{
+footer{
     display: grid;
     margin: 0 17% 0 17%;
     grid-template-columns: 1fr 10fr;
