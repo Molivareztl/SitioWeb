@@ -46,12 +46,12 @@ body{
 }
 header{
     grid-area: header;
-    background-image: url(../SitioWeb/Media/Bg_2fort.png);
+    background-image: url(Media/Bg_2fort.png);
     background-size: cover;
 }
 .left{
     grid-area: left;
-    background-image: url(../SitioWeb/Media/bgtest.jpg);
+    background-image: url(Media/bgtest.jpg);
     background-size: 100%;
     background-repeat: repeat-y;
 }
@@ -65,7 +65,7 @@ main{
 }
 .right{
     grid-area: right;
-    background-image: url(../SitioWeb/Media/bgtest.jpg);
+    background-image: url(Media/bgtest.jpg);
     background-size: 100%;
     transform: scaleX(-1);
     background-repeat: repeat-y;
