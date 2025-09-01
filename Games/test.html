@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GameTest1</title>
+    <style>
+        html, body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            background-image: url(../Media/Bg_Well.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <main><canvas></canvas></main>
+    
+    <script>
+        //sftp://molivares@server-prog/home/molivares
+        const canvas = document.querySelector('canvas')
+        const c = canvas.getContext('2d')
+        const img = new Image();
+        const Iproyectile = new Image();
+        const proyectiles = []
+        img.src = '../Media/sign.png';
+        Iproyectile.src = '../Media/Flames.png'
+        Iproyectile.style.zIndex = '0';
+        img.style.zIndex = '1';
+        
+        canvas.height = window.innerHeight
+        canvas.width = window.innerWidth
+        
+        const mouse = {x: 0, y: 0};
+
+        class Proyectile {
+            constructor({position, velocity}) {
+                this.position = position
+                this.velocity = velocity
+
+                this.width = 100
+                this.height = 100
+                }
+                draw(){c.drawImage(Iproyectile, this.position.x, this.position.y, this.width, this.height);}
+                update(){
+                    this.draw()
+                    this.position.x += this.velocity.x
+                    this.position.y += this.velocity.y
+                }}
+        class Player {
+            constructor() {
+                this.rotation = 0
+                this.width = 200
+                this.height = 100
+                this.position = {
+                    x: canvas.width / 2,
+                    y: canvas.height / 2
+                }
+            }
+            draw() {
+                c.save(); 
+                c.translate(this.position.x, this.position.y);
+                c.rotate(this.rotation);
+                c.drawImage(img, -this.width / 2, -this.height / 2, this.width, this.height);
+                c.restore(); 
+            }}
+        class Enemy {
+            constructor() {
+                this.rotation = 0
+                this.width = 200
+                this.height = 100
+                this.position = {
+                    x: Math.random() * (canvas.width - this.width),
+                    y: Math.random() * (canvas.height - this.height)
+                }}
+
+            draw() {
+                c.save(); 
+                c.translate(this.position.x, this.position.y);
+
+                c.drawImage(img, -this.width / 2, -this.height / 2, this.width, this.height);
+                c.restore(); 
+            }}
+        const player = new Player();
+
+        // Updates the mouse position
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        });
+        function animate() {
+            window.requestAnimationFrame(animate);
+            c.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Rotation angle
+            const Mx = mouse.x - player.position.x;
+            const My = mouse.y - player.position.y;
+            player.rotation = Math.atan2(My, Mx); 
+
+            player.draw();
+            for (let i = proyectiles.length - 1; i >= 0; i--) {
+            const proyectile = proyectiles[i];
+            proyectile.update();
+
+            // position difference
+            const Kx = proyectile.position.x - canvas.width / 2;
+            const Ky = proyectile.position.y - canvas.height / 2;
+
+            // Calculate the "kill radius" with pythagoras
+            const Kdistance = Math.sqrt(Kx * Kx + Ky * Ky);
+
+            // deletes the proyectile when the distance is higher than 300
+            if (Kdistance > 300) {proyectiles.splice(i, 1);}
+            }}
+        // start animate() when the image is loaded
+        img.onload = () => {animate();};
+let fire = false;
+let cooldown;
+
+window.addEventListener('mousedown', () => {
+    fire = true;
+    if (cooldown == null) {
+        cooldown = setInterval(() => {
+            if (fire) {
+                proyectiles.push(new Proyectile({
+                    position: {x: player.position.x + Math.cos(player.rotation) * 100,
+                        y: player.position.y + Math.sin(player.rotation) * 100
+                    },
+                    velocity: {x: Math.cos(player.rotation) * 5,y: Math.sin(player.rotation) * 5}
+                }));
+            }
+        }, 100); // 100 milisecond timer
+    }
+});
+// when mouse isnt pressed
+window.addEventListener('mouseup', () => {
+    fire = false;
+    clearInterval(cooldown)
+    cooldown = null;
+});//molivares "B" (18)
+    </script>
+
+</body>
+</html>
