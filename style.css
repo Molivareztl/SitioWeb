@@ -34,7 +34,6 @@ body{
     filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.75));
 }
 .merc:hover{filter: contrast(150%); filter: brightness(150%); filter: grayscale(80%);}
-
 .char{
     position: absolute;
     margin: auto;
@@ -95,8 +94,9 @@ button{
     font-size:x-large;
     border: 0px solid transparent;
     border-radius: 20px 20px 0px 0px;
+    transform: translateY(10px);
 }
-.selector:hover{filter: brightness(120%);}
+button:hover{transform: translateY(0px);} .selector:hover{filter: brightness(120%);}
 .info{
     line-height: 30px;
     font-family: arial,helvetica,sans-serif;
