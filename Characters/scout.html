@@ -7,10 +7,7 @@
 <title>Meet The Scout </title>
 
 <style>
-html{
-    overflow-y:auto;
-    
-}
+html{overflow-y:auto;overflow-x: hidden;}
 body{
     min-height: 100vh;
     display: grid;
@@ -89,7 +86,8 @@ table{background-image: linear-gradient( #dabdab 0%, #c1a18a 100%); border-colla
 tr:first-child, th:first-child{background-image: linear-gradient( #ef9849  0%,  #f08149  100%);}
 tr, th{font-weight: normal;text-align: center;}
 .shadow{filter: drop-shadow(3px 2px 15px rgba(0, 0, 0, 0.75));}
-.buttons{height: 100px;}
+.buttons{height: 100px; background-color: #5a5149; border-radius:  10px 10px 0px 0px; margin: 10px 10px 0px; transform: translateY(30px);}
+.buttons:hover{ transform: translateY(10px); transition: 0.2s;}
 </style>
 
 <script>
@@ -130,42 +128,47 @@ tr, th{font-weight: normal;text-align: center;}
                 Gracias a su saludable dieta conformada por pollo frito y bebidas energizantes, Scout logra recorrer gigantescas distancias e incluso patear el aire(haciendo un "doble salto") sin cansarse, incluso cargando varias armas encima. A pesar de esto, la falta de alimento real lo dejan debil a todo tipo de ataques.
             </p><br>
             <img src="https://valvearchive.com/archive/Team%20Fortress/Team%20Fortress%202/Movies/Meet%20The%20Spy/Polaroids/spy_scoutmom_pic002.png" alt="SpyAndScoutsMom" height="230px" style="position: absolute; left: -200px; top: 280px; transform: rotate(-10deg);" class="shadow">
-
+            <p>En el futuro, Jeremy logra establecer una casa en la ciudad de Teufort donde cría a sus 4 hijos solo(cada uno de distintas madres) y paga sus gastos con el dinero de la ciudad que recibe por la extensa cantidad de lesiones que ha sufrido en la misma.</p><br>
+            <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> El Scout es el unico de los mercenarios que no es capaz de leer.</p>
+            <img src="https://wiki.teamfortress.com/w/images/b/b5/RedBonk.png" alt="RBonk" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
+            <img src="https://wiki.teamfortress.com/w/images/0/09/BluBonk.png" alt="BBonk" style="height: 320px; position: absolute; right: -200px; transform: translateY(-100px) rotate(-20deg);">
+            <!--Arsenal Zone-->
             <h1 class="Font">Arsenal</h1>
-            
-            <P>El arsenal del Scout consta de armas ligeras que le permitan correr igual de rapido sin perder su velocidad, siendo estas:</P><br>
-            <div style="display: block; text-align: center;">
-            <img class="buttons selector" onclick="main()" src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Scattergun.png" alt="primary">
-            <img class="buttons selector" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/f/f0/Backpack_Pistol.png" alt="primary">
-            <img class="buttons selector" onclick="melee()" src="https://wiki.teamfortress.com/w/images/d/d1/Backpack_Bat.png" alt="primary">
+                <P>El arsenal del Scout consta de armas ligeras que le permitan correr igual de rapido sin perder su velocidad, siendo estas:</P><br>
+            <div style="display: block; text-align : right; margin: 0px;">
+            <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Scattergun.png" alt="primary">
+            <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/f/f0/Backpack_Pistol.png" alt="primary">
+            <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/d/d1/Backpack_Bat.png" alt="primary">
             </div>
-            <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px; border-radius: 10px;">
+            <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
             <div id="primary">
-                <h2 class="Font">La Recortada</h2>
-                <p>
-                    Una escopeta de doble cañon recortada de accion de palanca con una culata de madera, modificada (posiblemente por el mismo Scout)para reducir su peso; ideal para causar graves heridas al equipo enemigo a corta y mediana distancia.
-                    Esta es un arma con una recarga rapida entre 0.7 y 0.5 segundos, es capaz de disparar 10 pellets con una gran propagación y generar un daño entre 105 y 3 puntos (dependiendo de la distancia).<br><br>
-                    Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.
-                </p>
+            <h2 style="color: #b1aca0;" class="Font">La Recortada</h2>
+            <p>
+                Una escopeta de doble cañon recortada de acción de palanca con una culata de madera, modificada (posiblemente por el mismo Scout)para reducir su peso; ideal para causar graves heridas al equipo enemigo a corta y mediana distancia.
+                Esta es un arma con una recarga rápida entre 0.7 y 0.5 segundos, es capaz de disparar 10 pellets con una gran propagación y generar un daño entre 105 y 3 puntos (dependiendo de la distancia).<br><br>
+                Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.
+            </p>
             </div>
             <div>
-                <div id="secondary" style="display: none;">
-                <h2 class="Font">La Pistola</h2>
-                <p>
-                    Una pistola de gatillo sensible que utiliza cartucho y es lo suficientemente pequeña para entrar en el bolsillo; util en los momentos en los que la municion es escasa y la distancia entre el enemigo y tu es grande.
-                    Esta es un arma con una recarga rapida de 1 segundo pero con una velocidad de disparo de 0.1 segundos y de poca propagacion, es capaz de generar un daño entre 22 y 8 puntos (dependiendo de la distancia).
-                    <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                </p>
-                </div>
-                    <div id="melee" style="display: none;">
-                    <h2 class="Font">El Bate</h2>
-                    <p>
-                        Un Bate de béisbol de aluminio, con empuñadura de goma y una gran abolladura en el costado(posiblemente causada por el golpe que el Scout le dió al Heavy en Meet The Scout); Perfecto para terminar con enemigos moribundos a distancias reducidas o destruir construcciones pequeñas.<br><br>
-                        A pesar de ser una de las armas cuerpo a cuerpo de menor daño, esta tambien es la más rapida; con una velocidad de 0,5 segundos, 35 puntos de daño base y llegando a 105 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
-                    </p>
-                </div>
+            <div id="secondary" style="display: none;">
+            <h2 style="color: #b1aca0;" class="Font">La Pistola</h2>
+            <p>
+                Una pistola de gatillo sensible que utiliza cartucho y es lo suficientemente pequeña para entrar en el bolsillo; útil en los momentos en los que la munición es escasa y la distancia entre el enemigo y tu es grande.
+                Esta es un arma con una recarga rápida de 1 segundo y de velocidad de disparo de 0.1 segundos con una poca propagacion. Es capaz de generar un daño entre 22 y 8 puntos (dependiendo de la distancia).
+                <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+            </p>
+            </div>
+            <div id="melee" style="display: none;">
+            <h2 style="color: #b1aca0;" class="Font">El Bate</h2>
+            <p>
+                Un Bate de béisbol de aluminio, con empuñadura de goma y una gran abolladura en el costado(posiblemente causada por el golpe que el Scout le dió al Heavy en <span style="font-style: italic;">Meet The Scout</span>); Perfecto para terminar con enemigos moribundos a distancias reducidas o destruir construcciones pequeñas.<br><br>
+                A pesar de ser una de las armas cuerpo a cuerpo de menor daño, esta tambien es la más rapida; con una velocidad de 0,5 segundos, 35 puntos de daño base y llegando a 105 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
+            </p>
             </div>
             </div>
+            </div>
+            <img src="https://wiki.teamfortress.com/w/images/thumb/a/a1/Deep_Fried_Desire_Chicken_Bucket.png/320px-Deep_Fried_Desire_Chicken_Bucket.png" alt="Bucket" style=" height: 160px; position: absolute; left: -40px; bottom: -40px;">
+
     </main>
     <footer>
         <img src="../Media/Valv.png" alt="Valv Logo">
