@@ -18,7 +18,7 @@ body{
     "left main right"
     "left footer right";
 }
-.Scout{
+.Mercenary{
   position: absolute;
   right: 20%;
   top: 60px;
@@ -30,15 +30,6 @@ body{
   top: 250px;
   transform: rotate(-6deg);
   pointer-events: none;
-}
-.char{
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 20px;
-    text-align: center;
-    z-index: 1;
 }
 header{
     grid-area: header;
@@ -110,8 +101,23 @@ tr, th{font-weight: normal;text-align: center;}
 <body>
     <a href="../index.html">Volver a la página principal</a>
     <header>
-        <img class="Scout" src="../Media/Scout.png" alt="Scout" width="500px">
-        <img class="title" src="../Media/ScoutTitle.png" alt="Title" width="500px">
+        <?php
+        if (isset($_GET['class'])) {
+        $info = $_GET['class'];}
+
+        // Usa un 'switch' para mostrar el contenido basado en el valor del parámetro
+        switch ($info) {
+            case 'scout': echo <<< SCOUT
+            <img class="Mercenary" src="../Media/Scout.png" alt="Scout" width="500px">
+            <img class="title" src="../Media/ScoutTitle.png" alt="Title" width="500px">
+            SCOUT; break;
+            case 'soldier': echo <<< SOLDIER
+            <img class="Mercenary" src="../Media/Soldier.png" alt="Scout" width="500px">
+            <img class="title" src="../Media/ScoutTitle.png" alt="Title" width="500px">
+            SOLDIER; break;
+        }
+        ?>
+
     </header>
 
     <div class="left"></div><div class="right"></div>
@@ -141,11 +147,96 @@ tr, th{font-weight: normal;text-align: center;}
                         <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> El Scout es el unico de los mercenarios que no es capaz de leer.</p>
                         <img src="https://wiki.teamfortress.com/w/images/b/b5/RedBonk.png" alt="RBonk" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
                         <img src="https://wiki.teamfortress.com/w/images/0/09/BluBonk.png" alt="BBonk" style="height: 320px; position: absolute; right: -200px; transform: translateY(-100px) rotate(-20deg);">
+                         <div>
+                        <!--Arsenal Zone-->
+                        <h1 class="Font">Arsenal</h1>
+                        <P>El arsenal del Scout consta de armas ligeras que le permitan correr igual de rapido sin perder su velocidad, siendo estas:</P><br>
+                        <div style="display: block; text-align : right; margin: 0px;">
+                        <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Scattergun.png" alt="primary">
+                        <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/f/f0/Backpack_Pistol.png" alt="primary">
+                        <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/d/d1/Backpack_Bat.png" alt="primary">
+                        </div>
+                        <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
+                        <div id="primary">
+                        <h2 style="color: #b1aca0;" class="Font">La Recortada</h2>
+                        <p>
+                        Una escopeta de doble cañon recortada de acción de palanca con una culata de madera, modificada (posiblemente por el mismo Scout)para reducir su peso; ideal para causar graves heridas al equipo enemigo a corta y mediana distancia.
+                        Esta es un arma con una recarga rápida entre 0.7 y 0.5 segundos, es capaz de disparar 10 pellets con una gran propagación y generar un daño entre 105 y 3 puntos (dependiendo de la distancia).<br><br>
+                        Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.
+                        </p>
+                        </div>
+                        <div>
+                        <div id="secondary" style="display: none;">
+                        <h2 style="color: #b1aca0;" class="Font">La Pistola</h2>
+                        <p>
+                        Una pistola de gatillo sensible que utiliza cartucho y es lo suficientemente pequeña para entrar en el bolsillo; útil en los momentos en los que la munición es escasa y la distancia entre el enemigo y tu es grande.
+                        Esta es un arma con una recarga rápida de 1 segundo y de velocidad de disparo de 0.1 segundos con una poca propagacion. Es capaz de generar un daño entre 22 y 8 puntos (dependiendo de la distancia).
+                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+                        </p>
+                        </div>
+                        <div id="melee" style="display: none;">
+                        <h2 style="color: #b1aca0;" class="Font">El Bate</h2>
+                        <p>
+                        Un Bate de béisbol de aluminio, con empuñadura de goma y una gran abolladura en el costado(posiblemente causada por el golpe que el Scout le dió al Heavy en <span style="font-style: italic;">Meet The Scout</span>); Perfecto para terminar con enemigos moribundos a distancias reducidas o destruir construcciones pequeñas.<br><br>
+                        A pesar de ser una de las armas cuerpo a cuerpo de menor daño, esta tambien es la más rapida; con una velocidad de 0,5 segundos, 35 puntos de daño base y llegando a 105 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
+                        </p>
+                        </div>
                         SCOUT; break;
-                    case 'soldier':
-                        echo '<h1>Información del soldier</h1>';
-                        echo '<p>Que haces acá ??? esta pagina sigue en desarrollo...</p>';
-                        break;
+                    case 'soldier': echo <<< SOLDIER
+                        <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"If fighting is sure to result in victory, then you must fight!"</div>
+                        <p>
+                        El Soldier es el mercenario mas loco del grupo, el mejor amigo (y también opuesto) del Demoman, guia de tour, la maldición de Merasmus, experto en la técnica del Rocket Jump, fanatico de Sun Tzu y un patriota ultranacionalista Estadounidense.
+                        </p><br>
+                        <img src="https://wiki.teamfortress.com/w/images/2/28/Soldier_contract_drawer.png" alt="Soldier" height="260px" style="position: absolute; right: -200px; top: 100px;" class="shadow">
+                        <p>
+                        Nacido en alguna parte del centro-norte de los Estados Unidos, Jane Doe(el nombre que se le dio por la ausencia de uno) es un hombre de pasado desconocido. Aunque se conoce que su locura es causado por el envenenamiento por plomo causado por consumir el agua contaminada de Teufort
+                        y que en algún momento llegó a conocerse con el mago Merasmus, se convirtió en su compañero de cuarto y lo desalojó de su castillo. Posteriormente se mudaría a una cueva llena de Australium.
+                        </p>
+                        <img src="https://wiki.teamfortress.com/w/images/c/cf/Bestbuddies.png" alt="SoldierAndDemo" height="280px" style="position: absolute; left: -160px; top: 280px; transform: rotate(10deg);" class="shadow">
+                        <p>
+                        Se conoce también que Jane intentó desesperadamente pelear con el ejército de los Estados Unidos en la Segunda Guerra Mundial(fue rechazado por su falta de intelecto).
+                        Ignorando esto, decidió viajar hacia Polonia y aprender a utilizar una gran variedad de armas con las cuales asesinó a una gran cantidad de "Nazis". Posteriormente se enteraría que la guerra había terminado en 1949.
+                        </p><br>
+                        <p>
+                        En el futuro, El Soldier se emparejará con Zhanna(una de las hermanas del Heavy) y consiguió mantener a su lado para siempre a su compañero Merasmus al mantener en su bolsillo un ladrillo embrujado con el alma del mago.
+                        </p><br>
+                        <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> La fuerza del Soldier incrementa cuando este se encuentra desnudo y bañado de miel</p>
+                        <img src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="shovel" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
+                        <img src="https://wiki.teamfortress.com/w/images/d/db/Backpack_Market_Gardener.png" alt="BBonk" style="height: 320px; position: absolute; right: -200px; transform: translateY(-100px) rotate(-40deg);">
+                        <h1 class="Font">Arsenal</h1>
+                        <!--Arsenal Zone-->
+                        <P>El arsenal del Soldier consta de un arsenal militar que cubre todas las áreas:</P><br>
+                        <div style="display: block; text-align : right; margin: 0px;">
+                        <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/1/1d/Backpack_Rocket_Launcher.png" alt="primary">
+                        <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/c/c9/Backpack_Shotgun.png" alt="primary">
+                        <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="primary">
+                        </div>
+                        <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
+                        <div id="primary">
+                        <h2 style="color: #b1aca0;" class="Font">El Lanzacohetes</h2>
+                        <p>
+                        Un lanzacohetes estandar con detalles de madera; útil para controlar grandes zonas a larga y media distancia y reducir distancias disparandote en el pie.
+                        Esta es un arma con una recarga normal de 0.8 segundos y un daño que va desde los 48 a 112 puntos con un radio  de explosión de 2.8 metros(dependiendo la distancia).
+                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+                        </p>
+                        </div>
+                        <div>
+                        <div id="secondary" style="display: none;">
+                        <h2 style="color: #b1aca0;" class="Font">La Escopeta</h2>
+                        <p>
+                        Una escopeta recortada de acción de bombéo con un mango de madera; ayuda en los momentos cuando los cohetes faltan o el enemigo se encuentra demasiado cerca de ti y la explosión pódría matar a ambos.
+                        Esta es un arma de una recarga normal de 0.6 segundos y un daño que va desde los 3 a 90 puntos con 10 perdigones por dispáro.
+                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+                        </p>
+                        </div>
+                        <div id="melee" style="display: none;">
+                        <h2 style="color: #b1aca0;" class="Font">La Pala</h2>
+                        <p>
+                        Una pala de trinchera plegable con el mango de madera astillado; Perfecto para terminar con enemigos moribundos a distancias reducidas o matar Spys. <br><br>
+                        Esta es un arma estandar; con una velocidad de 0,8 segundos, 65 puntos de daño base y llegando a 195 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
+                        </p>
+                        </div>
+                        SOLDIER; break;
                     case 'pyro':break;
                     case 'demoman':break;
                     case 'heavy':break;
@@ -159,44 +250,7 @@ tr, th{font-weight: normal;text-align: center;}
             } else {echo '<h1> elige uno por favor. </h1>';}
             ?>
         </div>
-        <div>
-            <!--Arsenal Zone-->
-            <h1 class="Font">Arsenal</h1>
-                <P>El arsenal del Scout consta de armas ligeras que le permitan correr igual de rapido sin perder su velocidad, siendo estas:</P><br>
-            <div style="display: block; text-align : right; margin: 0px;">
-            <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Scattergun.png" alt="primary">
-            <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/f/f0/Backpack_Pistol.png" alt="primary">
-            <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/d/d1/Backpack_Bat.png" alt="primary">
-            </div>
-            <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
-            <div id="primary">
-            <h2 style="color: #b1aca0;" class="Font">La Recortada</h2>
-            <p>
-                Una escopeta de doble cañon recortada de acción de palanca con una culata de madera, modificada (posiblemente por el mismo Scout)para reducir su peso; ideal para causar graves heridas al equipo enemigo a corta y mediana distancia.
-                Esta es un arma con una recarga rápida entre 0.7 y 0.5 segundos, es capaz de disparar 10 pellets con una gran propagación y generar un daño entre 105 y 3 puntos (dependiendo de la distancia).<br><br>
-                Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.
-            </p>
-            </div>
-            <div>
-            <div id="secondary" style="display: none;">
-            <h2 style="color: #b1aca0;" class="Font">La Pistola</h2>
-            <p>
-                Una pistola de gatillo sensible que utiliza cartucho y es lo suficientemente pequeña para entrar en el bolsillo; útil en los momentos en los que la munición es escasa y la distancia entre el enemigo y tu es grande.
-                Esta es un arma con una recarga rápida de 1 segundo y de velocidad de disparo de 0.1 segundos con una poca propagacion. Es capaz de generar un daño entre 22 y 8 puntos (dependiendo de la distancia).
-                <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-            </p>
-            </div>
-            <div id="melee" style="display: none;">
-            <h2 style="color: #b1aca0;" class="Font">El Bate</h2>
-            <p>
-                Un Bate de béisbol de aluminio, con empuñadura de goma y una gran abolladura en el costado(posiblemente causada por el golpe que el Scout le dió al Heavy en <span style="font-style: italic;">Meet The Scout</span>); Perfecto para terminar con enemigos moribundos a distancias reducidas o destruir construcciones pequeñas.<br><br>
-                A pesar de ser una de las armas cuerpo a cuerpo de menor daño, esta tambien es la más rapida; con una velocidad de 0,5 segundos, 35 puntos de daño base y llegando a 105 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
-            </p>
-            </div>
-            </div>
-            </div>
-            <img src="https://wiki.teamfortress.com/w/images/thumb/a/a1/Deep_Fried_Desire_Chicken_Bucket.png/320px-Deep_Fried_Desire_Chicken_Bucket.png" alt="Bucket" style=" height: 160px; position: absolute; left: -40px; bottom: -40px;">
-        </div>
+       
         </div>
     </main>
     <footer>
