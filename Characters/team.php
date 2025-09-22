@@ -112,7 +112,7 @@ tr, th{font-weight: normal;text-align: center;}
             <img class="title" src="../Media/ScoutTitle.png" alt="Title" width="500px">
             SCOUT; break;
             case 'soldier': echo <<< SOLDIER
-            <img class="Mercenary" src="../Media/Soldier.png" alt="Scout" width="500px">
+            <img class="Mercenary" src="../Media/Soldier.png" alt="Soldier" width="500px">
             <img class="title" src="../Media/ScoutTitle.png" alt="Title" width="500px">
             SOLDIER; break;
         }
