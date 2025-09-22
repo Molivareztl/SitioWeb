@@ -244,64 +244,7 @@ tr, th{font-weight: normal;text-align: center;}
                         SOLDIER; break;
                     case 'pyro':break;
                     case 'demoman':break;
-                    case 'heavy': echo <<< HEAVY 
-                        <div class="info shadow">
-                        <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"Some people think they can outsmart me. Maybe... maybe. I have yet to meet one that can outsmart bullet."</div>
-                        <p>
-                        El Heavy es el mercenario mas fuerte del grupo, el mejor amigo del Medic, el opuesto del Scout y un hombre bastante amigable de acento ruso.
-                        </p><br>
-                        <img src="https://wiki.teamfortress.com/w/images/2/28/Soldier_contract_drawer.png" alt="Soldier" height="260px" style="position: absolute; right: -200px; top: 100px;" class="shadow">
-                        <p>
-                        Milkhail(también llamado Misha o Heavy) nació en Dzhugdzhur Mountains, Khabarovsk Krai, USSR durante la primera guerra mundial, junto a sus hermanas(Bronislava, Yana y Zhanna), su madre(de nombre desconocido) y su padre con las cuales viviría aislado y cazaría osos.
-                        </p>
-                        <img src="https://wiki.teamfortress.com/w/images/c/cf/Bestbuddies.png" alt="SoldierAndDemo" height="280px" style="position: absolute; left: -160px; top: 280px; transform: rotate(10deg);" class="shadow">
-
-                        <p>
-                        Se sabe que durante la Segunda Guerra Mundial, Misha y su familia sería capturados como prisioneros en un GULAG por los ideales de su padre. Este evento marcaría al mercenario;
-                        volviendolo en un hombre sobreprotector con su familia y le generaría el gran cariño que este le tiene a sus armas pesadas.
-                        </p><br>
-                        <p>
-                        En el futuro, El Heavy tendría al Soldier como cuñado y dejaría de ser tan sobreprotector con su familia, invitandolos a la casa del Scout.
-                        </p><br>
-                        <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> El Heavy tiene un doctorado en literatura rusa.</p>
-                        <img src="https://wiki.teamfortress.com/w/images/f/f4/Backpack_Sandvich.png" alt="shovel" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
-                        <img src="https://wiki.teamfortress.com/w/images/9/9c/Backpack_Dalokohs_Bar.png" alt="BBonk" style="height: 300px; position: absolute; right: -200px; transform: translateY(-100px) rotate(180deg);">
-                        <!--Arsenal Zone-->
-                        <h1 class="Font">Arsenal</h1>
-                        <P>El arsenal del Heavy consta de armas Pesadas que le permite abarcar grandes zonas por largos periodos, siendo estas:</P><br>
-                        <div style="display: block; text-align : right; margin: 0px;">
-                        <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/thumb/1/1f/Backpack_Minigun.png/90px-Backpack_Minigun.png" alt="primary">
-                        <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/c/c9/Backpack_Shotgun.png" alt="primary">
-                        <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/c/c4/Backpack_Fists.png" alt="primary">
-                        </div>
-                        <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
-                        <div id="primary">
-                        <h2 style="color: #b1aca0;" class="Font">La Minigun</h2>
-                        <p>
-                        La Minigun o "Sasha" es una gran ametralladora Gatling grís de dos mangos y con un compartimiento para la munición; Ideal para el control de masas a corta y mediana distancia.
-                        Esta es un arma de una recarga rapida de 0.1 segundos pero de una ejecución de 0.8 segundos. Su daño puede ir desde 5 hasta 513 puntos(dependiendo de la distancia) con una gran dispersión.
-                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                        </p>
-                        </div>
-                        <div>
-                        <div id="secondary" style="display: none;">
-                        <h2 style="color: #b1aca0;" class="Font">La Escopeta</h2>
-                        <p>
-                        Una escopeta recortada de acción de bombéo con un mango de madera; ayuda en los momentos cuando la munición faltan o el enemigo se encuentra demasiado cerca de ti para desplegar la minigun.
-                        Esta es un arma de una recarga normal de 0.6 segundos y un daño que va desde los 3 a 90 puntos con 10 perdigones por dispáro.
-                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                        </p>
-                        </div>
-                        <div id="melee" style="display: none;">
-                        <h2 style="color: #b1aca0;" class="Font">Los Puños</h2>
-                        <p>
-                        Las mismas manos del heavy con guantes sin dedos; Ideal para peleas de puños o rematar a un enemigo.
-                        Tiene una velocidad común de 0.8 segundos y un daño de 65 puntos.
-                        puedes golpear con un puño en especifico dependiendo del botón del mouse.
-                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                        </p>
-                        </div>
-                    HEAVY; break;
+                    case 'heavy': break;
                     case 'engineer':break;
                     case 'medic':break;
                     case 'sniper':break;
