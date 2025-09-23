@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 <link href="style.css" rel="stylesheet" type="text/css" /> 
 <link rel="shortcut icon" href="https://steamcdn-a.akamaihd.net/apps/tf2/blog/images/favicon.ico">
-<title>Meet The Scout </title>
+
 
 <style>
 html{overflow-y:auto;overflow-x: hidden;}
@@ -137,6 +137,7 @@ tr, th{font-weight: normal;text-align: center;}
                 // Usa un 'switch' para mostrar el contenido basado en el valor del parámetro
                 switch ($info) {
                     case 'scout': echo <<< SCOUT
+                        <title>Meet The Scout</title>
                         <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"Ya' listenin'? OK. Grass grows, birds fly, sun shines, and brotha', I hurt people."</div>
                         <p>
                         Scout es el mercenario mas joven y rapido del equipo, el oponente principal del Heavy, una fuerza de la naturaleza y el regalo enviado por dios para las mujeres. 
@@ -187,64 +188,66 @@ tr, th{font-weight: normal;text-align: center;}
                         </div>
                         SCOUT; break;
                     case 'soldier': echo <<< SOLDIER
-                        <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"If fighting is sure to result in victory, then you must fight!"</div>
-                        <p>
-                        El Soldier es el mercenario mas loco del grupo, el mejor amigo (y también opuesto) del Demoman, guia de tour, la maldición de Merasmus, experto en la técnica del Rocket Jump, fanatico de Sun Tzu y un patriota ultranacionalista Estadounidense.
-                        </p><br>
-                        <img src="https://wiki.teamfortress.com/w/images/2/28/Soldier_contract_drawer.png" alt="Soldier" height="260px" style="position: absolute; right: -200px; top: 100px;" class="shadow">
-                        <p>
-                        Nacido en alguna parte del centro-norte de los Estados Unidos, Jane Doe(el nombre que se le dio por la ausencia de uno) es un hombre de pasado desconocido. Aunque se conoce que su locura es causado por el envenenamiento por plomo causado por consumir el agua contaminada de Teufort
-                        y que en algún momento llegó a conocerse con el mago Merasmus, se convirtió en su compañero de cuarto y lo desalojó de su castillo. Posteriormente se mudaría a una cueva llena de Australium.
-                        Su gran conocimiento en armamentística y su locura permitió convertirlo en una clase que se adapta en la mayoría de entornos.
-                        </p>
-                        <img src="https://wiki.teamfortress.com/w/images/c/cf/Bestbuddies.png" alt="SoldierAndDemo" height="280px" style="position: absolute; left: -160px; top: 280px; transform: rotate(10deg);" class="shadow">
-                        <p>
-                        Se conoce también que Jane intentó desesperadamente pelear con el ejército de los Estados Unidos en la Segunda Guerra Mundial(fue rechazado por su falta de intelecto).
-                        Ignorando esto, decidió viajar hacia Polonia y aprender a utilizar una gran variedad de armas con las cuales asesinó a una gran cantidad de "Nazis". Posteriormente se enteraría que la guerra había terminado en 1949.
-                        </p><br>
-                        <p>
-                        En el futuro, El Soldier se emparejará con Zhanna(una de las hermanas del Heavy) y consiguió mantener a su lado para siempre a su compañero Merasmus al mantener en su bolsillo un ladrillo embrujado con el alma del mago.
-                        </p><br>
-                        <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> La fuerza del Soldier incrementa cuando este se encuentra desnudo y bañado de miel</p>
-                        <img src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="shovel" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
-                        <img src="https://wiki.teamfortress.com/w/images/d/db/Backpack_Market_Gardener.png" alt="BBonk" style="height: 320px; position: absolute; right: -200px; transform: translateY(-100px) rotate(-40deg);">
-                        <h1 class="Font">Arsenal</h1>
-                        <!--Arsenal Zone-->
-                        <P>El arsenal del Soldier consta de un arsenal militar que cubre todas las áreas:</P><br>
-                        <div style="display: block; text-align : right; margin: 0px;">
-                        <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/1/1d/Backpack_Rocket_Launcher.png" alt="primary">
-                        <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/c/c9/Backpack_Shotgun.png" alt="primary">
-                        <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="primary">
-                        </div>
-                        <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
-                        <div id="primary">
-                        <h2 style="color: #b1aca0;" class="Font">El Lanzacohetes</h2>
-                        <p>
-                        Un lanzacohetes estandar con detalles de madera; útil para controlar grandes zonas a larga y media distancia y reducir distancias disparandote en el pie.
-                        Esta es un arma con una recarga normal de 0.8 segundos y un daño que va desde los 48 a 112 puntos con un radio  de explosión de 2.8 metros(dependiendo la distancia).
-                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                        </p>
-                        </div>
-                        <div>
-                        <div id="secondary" style="display: none;">
-                        <h2 style="color: #b1aca0;" class="Font">La Escopeta</h2>
-                        <p>
-                        Una escopeta recortada de acción de bombéo con un mango de madera; ayuda en los momentos cuando los cohetes faltan o el enemigo se encuentra demasiado cerca de ti y la explosión pódría matar a ambos.
-                        Esta es un arma de una recarga normal de 0.6 segundos y un daño que va desde los 3 a 90 puntos con 10 perdigones por dispáro.
-                        <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
-                        </p>
-                        </div>
-                        <div id="melee" style="display: none;">
-                        <h2 style="color: #b1aca0;" class="Font">La Pala</h2>
-                        <p>
-                        Una pala de trinchera plegable con el mango de madera astillado; Perfecto para terminar con enemigos moribundos a distancias reducidas o matar Spys. <br><br>
-                        Esta es un arma estandar; con una velocidad de 0,8 segundos, 65 puntos de daño base y llegando a 195 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
-                        </p>
-                        </div>
+                            <title>Meet The Soldier</title>
+                            <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"If fighting is sure to result in victory, then you must fight!"</div>
+                            <p>
+                            El Soldier es el mercenario mas loco del grupo, el mejor amigo (y también opuesto) del Demoman, guia de tour, la maldición de Merasmus, experto en la técnica del Rocket Jump, fanatico de Sun Tzu y un patriota ultranacionalista Estadounidense.
+                            </p><br>
+                            <img src="https://wiki.teamfortress.com/w/images/2/28/Soldier_contract_drawer.png" alt="Soldier" height="260px" style="position: absolute; right: -200px; top: 100px;" class="shadow">
+                            <p>
+                            Nacido en alguna parte del centro-norte de los Estados Unidos, Jane Doe(el nombre que se le dio por la ausencia de uno) es un hombre de pasado desconocido. Aunque se conoce que su locura es causado por el envenenamiento por plomo causado por consumir el agua contaminada de Teufort
+                            y que en algún momento llegó a conocerse con el mago Merasmus, se convirtió en su compañero de cuarto y lo desalojó de su castillo. Posteriormente se mudaría a una cueva llena de Australium.
+                            Su gran conocimiento en armamentística y su locura permitió convertirlo en una clase que se adapta en la mayoría de entornos.
+                            </p>
+                            <img src="https://wiki.teamfortress.com/w/images/c/cf/Bestbuddies.png" alt="SoldierAndDemo" height="280px" style="position: absolute; left: -160px; top: 280px; transform: rotate(10deg);" class="shadow">
+                            <p>
+                            Se conoce también que Jane intentó desesperadamente pelear con el ejército de los Estados Unidos en la Segunda Guerra Mundial(fue rechazado por su falta de intelecto).
+                            Ignorando esto, decidió viajar hacia Polonia y aprender a utilizar una gran variedad de armas con las cuales asesinó a una gran cantidad de "Nazis". Posteriormente se enteraría que la guerra había terminado en 1949.
+                            </p><br>
+                            <p>
+                            En el futuro, El Soldier se emparejará con Zhanna(una de las hermanas del Heavy) y consiguió mantener a su lado para siempre a su compañero Merasmus al mantener en su bolsillo un ladrillo embrujado con el alma del mago.
+                            </p><br>
+                            <p><span class="Font" style="font-size: larger;">TRIVIA ! : </span> La fuerza del Soldier incrementa cuando este se encuentra desnudo y bañado de miel</p>
+                            <img src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="shovel" style="height: 320px; position: absolute; left: -200px; rotate: 20deg;">
+                            <img src="https://wiki.teamfortress.com/w/images/d/db/Backpack_Market_Gardener.png" alt="BBonk" style="height: 320px; position: absolute; right: -200px; transform: translateY(-100px) rotate(-40deg);">
+                            <h1 class="Font">Arsenal</h1>
+                            <!--Arsenal Zone-->
+                            <P>El arsenal del Soldier consta de un arsenal militar que cubre todas las áreas:</P><br>
+                            <div style="display: block; text-align : right; margin: 0px;">
+                            <img class="buttons selector shadow" onclick="main()" src="https://wiki.teamfortress.com/w/images/1/1d/Backpack_Rocket_Launcher.png" alt="primary">
+                            <img class="buttons selector shadow" onclick="secondary()" src="https://wiki.teamfortress.com/w/images/c/c9/Backpack_Shotgun.png" alt="primary">
+                            <img class="buttons selector shadow" onclick="melee()" src="https://wiki.teamfortress.com/w/images/c/c6/Backpack_Shovel.png" alt="primary">
+                            </div>
+                            <div class="shadow" style="color: #b1aca0; background-color: #5a5149; padding: 10px ; border-radius: 10px;">
+                            <div id="primary">
+                            <h2 style="color: #b1aca0;" class="Font">El Lanzacohetes</h2>
+                            <p>
+                            Un lanzacohetes estandar con detalles de madera; útil para controlar grandes zonas a larga y media distancia y reducir distancias disparandote en el pie.
+                            Esta es un arma con una recarga normal de 0.8 segundos y un daño que va desde los 48 a 112 puntos con un radio  de explosión de 2.8 metros(dependiendo la distancia).
+                            <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+                            </p>
+                            </div>
+                            <div>
+                            <div id="secondary" style="display: none;">
+                            <h2 style="color: #b1aca0;" class="Font">La Escopeta</h2>
+                            <p>
+                            Una escopeta recortada de acción de bombéo con un mango de madera; ayuda en los momentos cuando los cohetes faltan o el enemigo se encuentra demasiado cerca de ti y la explosión pódría matar a ambos.
+                            Esta es un arma de una recarga normal de 0.6 segundos y un daño que va desde los 3 a 90 puntos con 10 perdigones por dispáro.
+                            <p>Existe la posibilidad de que el daño del arma aumente gracias a los <span class="Font" style="color: rgb(0, 170, 0);">CRITICOS</span> y <span class="Font" style="color: rgb(170, 170, 0);">MIN-CRIT</span>s.</p>
+                            </p>
+                            </div>
+                            <div id="melee" style="display: none;">
+                            <h2 style="color: #b1aca0;" class="Font">La Pala</h2>
+                            <p>
+                            Una pala de trinchera plegable con el mango de madera astillado; Perfecto para terminar con enemigos moribundos a distancias reducidas o matar Spys. <br><br>
+                            Esta es un arma estandar; con una velocidad de 0,8 segundos, 65 puntos de daño base y llegando a 195 puntos al realizar un <span class="Font" style="color: rgb(0, 170, 0);">CRITICO</span>.
+                            </p>
+                            </div>
                         SOLDIER; break;
                     case 'pyro':break;
                     case 'demoman':break;
                     case 'heavy': echo <<< HEAVY
+                        <title>Meet The Heavy</title>
                         <div style="font-size: large; text-align: center; padding: 20px; font-style: oblique; color: #6b645b;">"Some people think they can outsmart me. Maybe... maybe. I have yet to meet one that can outsmart bullet."</div>
                         <p>
                         El Heavy es el mercenario mas fuerte del grupo, el mejor amigo del Medic, el opuesto del Scout y un hombre bastante amigable de acento ruso.
