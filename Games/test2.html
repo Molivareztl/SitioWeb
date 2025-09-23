@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+           content="width=device-width, initial-scale=1.0">
+    <title>Whac-A-Sap</title>
+
+    <style>
+        body {
+    background-color: rgb(255, 228, 196);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+#startButton {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#endButton {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.game-container {
+    background-color: rgb(1, 254, 64);
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    gap: 10px;
+    border: 2px solid rgb(216, 216, 216);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.build{
+    height: 150px;
+    width: 150px;
+}
+
+.hole {
+    height: 150px;
+    background: blue;
+    border: 5px solid rgb(30, 30, 30);
+    cursor: pointer;
+}
+
+.mole {
+    background-size: 150px;
+    background: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .game-container {
+        width: 80%;
+        gap: 10px;
+        padding: 5%;
+        grid-template-columns: repeat(4, 38%);
+    }
+
+    .hole {
+        height: 50px;
+        width: 50px;
+        background: blue;
+    }
+
+    .mole {
+        background-size: 50px;
+        background: red ;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="game-info">
+        <div id="score">Puntaje: 0</div>
+    </div>
+    <button id="startButton">Iniciar</button>
+    <button id="endButton" disabled>Terminar</button>
+    <div class="game-container">
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+document.addEventListener(
+    "DOMContentLoaded", function () {
+    const holes = 
+        document.querySelectorAll(".hole");
+    const startButton = 
+        document.getElementById("startButton");
+    const endButton = 
+        document.getElementById("endButton");
+    const scoreDisplay = 
+        document.getElementById("score");
+    const timerDisplay = 
+        document.getElementById("timer");
+
+    let score = 0;
+    let countdown;
+    let moleInterval;
+    max = 0;
+    time = 1000;
+    // Set the initial state to game over
+    let gameOver = true; 
+
+ function comeout() {
+    let random = holes[Math.floor(Math.random() * 16)];
+    if (!random.classList.contains('mole')){
+        random.classList.add('mole');
+        random.addEventListener('click', handleMoleClick);
+        max ++;}
+
+}
+
+    function handleMoleClick() {
+        if (!gameOver) {
+            score++;
+            max --;
+            scoreDisplay.textContent = `Puntaje: ${score}`;
+        }
+        this.classList.remove('mole');
+    }
+
+    function startGame() {
+        if (!gameOver) {
+        
+            // Prevent starting the game 
+            // again if it's already in progress
+            return;
+        }
+        
+        gameOver = false;
+        score = 0;
+        scoreDisplay.textContent = `Puntaje: ${score}`;
+        max = 0;
+        timeHolder = 0;
+        time = 500;
+        startButton.disabled = true;
+        endButton.disabled = false;
+
+        countdown = setInterval(() => {
+            if (max >= 16) {
+                clearInterval(countdown);
+                gameOver = true;
+                endText()
+                startButton.disabled = false;
+                endButton.disabled = true;
+            }
+        }, time);
+
+        moleInterval = setInterval(() => {
+            if (!gameOver) comeout(); else holes.forEach(item => {item.classList.remove('mole');}); 
+        }
+        , time);
+    }
+
+    function endGame() {
+        clearInterval(countdown);
+        clearInterval(moleInterval);
+        endText()
+        startButton.disabled = false;
+        endButton.disabled = true;
+    }
+    function endText(){
+        alert(`Juego terminado !\nTu puntaje fue de: ${score}`);
+        if (confirm("Guardar el puntaje?")) {
+        // Acepta
+        } else {
+        // Cancela
+        }
+    }
+    startButton.addEventListener("click", startGame);
+    endButton.addEventListener("click", endGame);
+});
+
+
+</script>
+
+
+</html>
