@@ -139,6 +139,9 @@ document.addEventListener(
     // Set the initial state to game over
     let gameOver = true; 
 
+    startButton.addEventListener("click", startGame);
+    endButton.addEventListener("click", endGame);
+
  function comeout() {
     let random = holes[Math.floor(Math.random() * 16)];
     if (!random.classList.contains('mole')){
@@ -158,13 +161,8 @@ document.addEventListener(
     }
 
     function startGame() {
-        if (!gameOver) {
-        
-            // Prevent starting the game 
-            // again if it's already in progress
-            return;
-        }
-        
+        if (!gameOver) {return;}
+
         gameOver = false;
         score = 0;
         scoreDisplay.textContent = `Puntaje: ${score}`;
@@ -173,14 +171,12 @@ document.addEventListener(
         time = 500;
         startButton.disabled = true;
         endButton.disabled = false;
+        clearInterval(countdown);
+        clearInterval(moleInterval);
 
         countdown = setInterval(() => {
             if (max >= 16) {
-                clearInterval(countdown);
-                gameOver = true;
-                endText()
-                startButton.disabled = false;
-                endButton.disabled = true;
+                endGame
             }
         }, time);
 
@@ -191,22 +187,64 @@ document.addEventListener(
     }
 
     function endGame() {
-        clearInterval(countdown);
-        clearInterval(moleInterval);
+        gameOver = true;
         endText()
         startButton.disabled = false;
         endButton.disabled = true;
     }
-    function endText(){
-        alert(`Juego terminado !\nTu puntaje fue de: ${score}`);
-        if (confirm("Guardar el puntaje?")) {
-        // Acepta
+
+async function endText(){
+    alert(`Juego terminado !\nTu puntaje fue de: ${score}`);
+    
+    if (confirm("Guardar el puntaje?")) {await question();}
+}
+
+async function save(nombre, score) {
+    try {
+        const response = await fetch('guardar_puntaje.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nombre: nombre,
+                score: score
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('Puntaje guardado correctamente');
+        } else if (result.error === 'nombre_existe') {
+            // El nombre ya existe, pedir uno nuevo
+            alert('Este nombre ya existe. Por favor, elige otro.');
+            await question(); // Volver a pedir nombre
         } else {
-        // Cancela
+            alert('Error al guardar el puntaje: ' + result.message);
         }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error de conexión');
     }
-    startButton.addEventListener("click", startGame);
-    endButton.addEventListener("click", endGame);
+}
+
+async function question(){
+        const nombre = prompt("Ingresa tu nombre:", "Jugador");
+    
+        if (nombre === null) {
+            alert("Operación cancelada.");
+            return;
+        }
+        
+        if (nombre.trim() === "") {
+            alert("El nombre no puede estar vacío.");
+            return;
+        }
+        await save(nombre.trim(), score);
+
+}
+
 });
 
 
