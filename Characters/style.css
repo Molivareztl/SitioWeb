@@ -1,2 +1,4 @@
 @font-face { font-family: TF2; src: url('../Fonts/tf2build.ttf'); }
+@font-face { font-family: prof; src: url('../Fonts/tf2professor.ttf'); }
 .Font{color: #b35215; font-family: TF2; font-weight: normal;}
+.Font2{font-family: prof; color: black;}
