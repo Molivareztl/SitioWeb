@@ -15,10 +15,9 @@
 
             font-family: Arial, sans-serif;
 
-            background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0), rgba(255, 255, 255, 1)), url(https://lh3.googleusercontent.com/p/AF1QipMlHetIvlALWMHFkbST1SdVL_buSBYGtLS2wWJV=s680-w680-h510-rw);
+            background-image: url(https://i.ytimg.com/vi/pVqCQk7AIP0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDJic6KVzMNMrAjymS06v2mUxXl8A);
             background-repeat:round;
             background-size: cover;
-
             display: flex;
 
             flex-direction: column;
