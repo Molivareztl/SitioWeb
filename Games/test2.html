@@ -196,19 +196,18 @@ document.addEventListener(
 
 async function endText(){
     alert(`Juego terminado !\nTu puntaje fue de: ${score}`);
-    
     if (confirm("Guardar el puntaje?")) {await question();}
 }
 
-async function save(nombre, score) {
+async function save(user, score) {
     try {
-        const response = await fetch('guardar_puntaje.php', {
+        const response = await fetch('saveScore.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                nombre: nombre,
+                user: user,
                 score: score
             })
         });
@@ -217,7 +216,7 @@ async function save(nombre, score) {
         
         if (result.success) {
             alert('Puntaje guardado correctamente');
-        } else if (result.error === 'nombre_existe') {
+        } else if (result.error === 'user_existe') {
             // El nombre ya existe, pedir uno nuevo
             alert('Este nombre ya existe. Por favor, elige otro.');
             await question(); // Volver a pedir nombre
@@ -231,18 +230,18 @@ async function save(nombre, score) {
 }
 
 async function question(){
-        const nombre = prompt("Ingresa tu nombre:", "Jugador");
+        const user = prompt("Ingresa tu nombre:", "Jugador");
     
-        if (nombre === null) {
+        if (user === null) {
             alert("Operación cancelada.");
             return;
         }
         
-        if (nombre.trim() === "") {
+        if (user.trim() === "") {
             alert("El nombre no puede estar vacío.");
             return;
         }
-        await save(nombre.trim(), score);
+        await save(user.trim(), score);
 
 }
 
