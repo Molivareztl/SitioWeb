@@ -11,9 +11,9 @@ if (empty($user)) {
     exit;
 }
 // Connection
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "server-prog";
+$username = "phpmyadmin";
+$password = "RedesInformaticas";
 $dbname = "tf_score";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

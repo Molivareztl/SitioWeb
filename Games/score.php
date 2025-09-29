@@ -1,8 +1,8 @@
 <?php
 // Configuration
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "server-prog";
+$username = "phpmyadmin";
+$password = "RedesInformaticas";
 $dbname = "tf_score";
 // Make connection
 $conn = new mysqli($servername, $username, $password, $dbname);
