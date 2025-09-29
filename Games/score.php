@@ -1,6 +1,6 @@
 <?php
 // Configuration
-$servername = "server-prog";
+$servername = "localhost";
 $username = "phpmyadmin";
 $password = "RedesInformaticas";
 $dbname = "tf_score";
