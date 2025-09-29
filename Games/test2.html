@@ -9,7 +9,8 @@
 
     <style>
         body {
-    background-color: rgb(255, 228, 196);
+    background-image: url(https://i.ytimg.com/vi/pVqCQk7AIP0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDJic6KVzMNMrAjymS06v2mUxXl8A);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,14 +57,17 @@
 
 .hole {
     height: 150px;
-    background: blue;
-    border: 5px solid rgb(30, 30, 30);
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgiMIFWPVYhJ0AhdtGPU5aGE48hePeFYoMGQ&s);
+        background-size: cover;
+        background-repeat: no-repeat;
     cursor: pointer;
 }
 
 .mole {
     background-size: 150px;
-    background: red;
+        background-image: url(https://wiki.teamfortress.com/w/images/thumb/8/82/Snack_attack_sap.png/300px-Snack_attack_sap.png);
+        background-size: cover;
+        background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 600px) {
@@ -77,12 +81,16 @@
     .hole {
         height: 50px;
         width: 50px;
-        background: blue;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgiMIFWPVYhJ0AhdtGPU5aGE48hePeFYoMGQ&s);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .mole {
         background-size: 50px;
-        background: red ;
+        background-image: url(https://wiki.teamfortress.com/w/images/thumb/8/82/Snack_attack_sap.png/300px-Snack_attack_sap.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
     </style>
@@ -113,9 +121,7 @@
         <div class="hole"></div>
         <div class="hole"></div>
     </div>
-
 </body>
-
 </html>
 
 <script>
@@ -131,7 +137,6 @@ document.addEventListener(
         document.getElementById("score");
     const timerDisplay = 
         document.getElementById("timer");
-
     let score = 0;
     let countdown;
     let moleInterval;
@@ -149,9 +154,7 @@ document.addEventListener(
         random.classList.add('mole');
         random.addEventListener('click', handleMoleClick);
         max ++;}
-
 }
-
     function handleMoleClick() {
         if (!gameOver) {
             score++;
@@ -160,45 +163,38 @@ document.addEventListener(
         }
         this.classList.remove('mole');
     }
-
     function startGame() {
         if (!gameOver) {return;}
-
         gameOver = false;
         score = 0;
         scoreDisplay.textContent = `Puntaje: ${score}`;
         max = 0;
         timeHolder = 0;
-        time = 500;
+        time = 300;
         startButton.disabled = true;
         endButton.disabled = false;
         clearInterval(countdown);
         clearInterval(moleInterval);
-
         countdown = setInterval(() => {
             if (max >= 16) {
                 endGame
             }
         }, time);
-
         moleInterval = setInterval(() => {
             if (!gameOver) comeout(); else holes.forEach(item => {item.classList.remove('mole');}); 
         }
         , time);
     }
-
     function endGame() {
         gameOver = true;
         endText()
         startButton.disabled = false;
         endButton.disabled = true;
     }
-
 async function endText(){
     alert(`Juego terminado !\nTu puntaje fue de: ${score}`);
     if (confirm("Guardar el puntaje?")) {await question();}
 }
-
 async function save(user, score) {
     try {
         const response = await fetch('saveScore.php', {
@@ -211,7 +207,6 @@ async function save(user, score) {
                 score: score
             })
         });
-        
         const result = await response.json();
         
         if (result.success) {
@@ -228,7 +223,6 @@ async function save(user, score) {
         alert('Error de conexión');
     }
 }
-
 async function question(){
         const user = prompt("Ingresa tu nombre:", "Jugador");
     
@@ -244,11 +238,6 @@ async function question(){
         await save(user.trim(), score);
 
 }
-
 });
-
-
 </script>
-
-
 </html>
