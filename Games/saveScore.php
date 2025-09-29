@@ -11,7 +11,7 @@ if (empty($user)) {
     exit;
 }
 // Connection
-$servername = "server-prog";
+$servername = "localhost";
 $username = "phpmyadmin";
 $password = "RedesInformaticas";
 $dbname = "tf_score";
